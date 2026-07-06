@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPA / CGPA Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎓 GPA / CGPA Calculator</h1>
+
+    <!-- SUBJECT INPUT -->
+    <div class="card">
+        <div class="row">
+
+            <input type="text" id="subject" placeholder="Subject Name">
+
+            <input type="number" id="credits" placeholder="Credits (1-10)" min="1" max="10">
+
+            <select id="grade">
+                <option value="10">S</option>
+                <option value="9">A</option>
+                <option value="8">B</option>
+                <option value="7">C</option>
+                <option value="6">D</option>
+                <option value="5">E</option>
+                <option value="0">F</option>
+            </select>
+
+            <button onclick="addSubject()">Add</button>
+
+        </div>
+    </div>
+
+    <!-- SUBJECT TABLE -->
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Credits</th>
+                    <th>Grade</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="list"></tbody>
+        </table>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="result-box">
+
+        <div class="box gpa">
+            <h3>Semester GPA</h3>
+            <p id="gpa">0.00</p>
+        </div>
+
+        <div class="box cgpa">
+            <h3>CGPA</h3>
+            <p id="cgpa">0.00</p>
+        </div>
+
+        <div class="box due">
+            <h3>Subjects Due</h3>
+            <p id="dueSubjects">0</p>
+        </div>
+
+    </div>
+
+    <!-- WHAT IF MODE -->
+    <h2>📊 What If Mode (Semester Planner)</h2>
+
+    <div class="card">
+        <div class="row">
+
+            <input type="number" id="futureSem" placeholder="Semester (1-8)" min="1" max="8">
+
+            <input type="number" id="futureCredits" placeholder="Credits (1-30)" min="1" max="30">
+
+            <input type="number" id="futureGpa" placeholder="Expected GPA (0-10)" min="0" max="10" step="0.01">
+
+            <button onclick="addFuture()">Add</button>
+
+        </div>
+    </div>
+
+    <!-- FUTURE TABLE -->
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sem</th>
+                    <th>Credits</th>
+                    <th>GPA</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="futureList"></tbody>
+        </table>
+    </div>
+
+    <!-- PROJECTED CGPA -->
+    <div class="result-box">
+
+        <div class="box future">
+            <h3>Projected CGPA</h3>
+            <p id="projected">0.00</p>
+        </div>
+
+    </div>
+
+    <button class="reset" onclick="resetAll()">Reset All</button>
+
+</div>
+
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</body>
+</html>
